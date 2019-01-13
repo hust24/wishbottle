@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/FirstPage/FirstPage",
+    "pages/AlertPage/AlertPage",
+    "pages/AddPage/AddPage"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

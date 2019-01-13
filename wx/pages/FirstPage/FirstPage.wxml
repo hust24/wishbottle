@@ -1,0 +1,15 @@
+<button bindtap='addData' class='addBtn'>添加数据</button>
+<view wx:for="{{list}}">
+  <view class='item'>
+    <view class='itemStuEle'>
+      <view class='itemEle'>学生id: {{item.stuID}}</view>
+      <view class='itemEle'>学生姓名: {{item.stuName}}</view>
+      <view class='itemEle'>学生电话: {{item.stuPhone}}</view>
+      <view class='itemEle'>学生地址: {{item.stuAddress}}</view>
+    </view>
+    <view class='itemExeEle'>
+      <button class='itemBtn' bindtap='alertData' data-alert="{{item}}">修改</button>
+      <button class='itemBtn' bindtap='deleteData' data-delete="{{item}}">删除</button>
+    </view>
+  </view>
+</view>
