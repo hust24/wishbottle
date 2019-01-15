@@ -32,8 +32,48 @@ public class WishBottle {
     private int type = 0;
 
     /**
-     * 捡瓶子人的id  默认值为-1
+     * 捡瓶子人的id  默认值为1
      */
     @Column
-    private Integer pickerId = -1;
+    private Integer pickerId = 1;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getWriterId() {
+        return writerId;
+    }
+
+    public void setWriterId(Integer writerId) {
+        this.writerId = writerId;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public Integer getPickerId() {
+        return pickerId;
+    }
+
+    public void setPickerId(Integer pickerId) {
+        this.pickerId = pickerId;
+    }
 }
