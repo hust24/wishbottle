@@ -37,6 +37,20 @@ public class WishBottle {
     @Column
     private Integer pickerId = 1;
 
+    /**
+     * 捡瓶子人的id  默认值为1
+     */
+    @Column
+    private String content;
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     public Integer getId() {
         return id;
     }
