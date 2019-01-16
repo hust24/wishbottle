@@ -1,5 +1,6 @@
 package com.hust24.wishbottle.controller;
 
+import com.hust24.wishbottle.service.WishReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
