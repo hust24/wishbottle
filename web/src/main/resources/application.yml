@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/wishbottle?serverTimezone=UTC
+  jpa:
+    hibernate:
+      # 更新或者创建数据表结构
+      ddl-auto: update
+    # 增删改查显示sql
+    show-sql: true
+  artemis:
+    port: 8080
