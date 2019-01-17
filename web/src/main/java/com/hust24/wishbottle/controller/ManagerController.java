@@ -4,6 +4,7 @@ import com.hust24.wishbottle.service.ManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.hust24.wishbottle.service.ManagerService;
 
 import javax.annotation.Resource;
 

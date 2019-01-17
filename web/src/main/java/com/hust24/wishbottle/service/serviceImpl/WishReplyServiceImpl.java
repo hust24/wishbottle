@@ -6,8 +6,8 @@ import com.hust24.wishbottle.repository.WishReplyRepository;
 import com.hust24.wishbottle.service.WishReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
+
 
 @Service
 public class WishReplyServiceImpl implements WishReplyService {

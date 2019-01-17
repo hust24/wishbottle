@@ -14,4 +14,7 @@ public interface WishBottleRepository extends JpaRepository<WishBottle,Integer> 
     @Modifying
     @Query(value = "update wish_bottle set status=?1 where id=?2",nativeQuery = true)
     int deleteById(Integer status,Integer wishid);
+
+    @Query(value = "SELECT * FROM wish_bottle WHERE status = 0 ORDER BY Rand() LIMIT 1", nativeQuery=true)
+    List<WishBottle> getRandWish();
 }
