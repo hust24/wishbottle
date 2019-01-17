@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Map;
 
@@ -22,5 +23,11 @@ public class WishBottleServiceImpl implements WishBottleService {
     @Override
     public List<WishBottle> findAllPickedBottle(Integer pickerId) {
         return wishBottleRepository.findAllPickedBottle(pickerId);
+    }
+
+    @Override
+    @Transactional
+    public int deleteById(Integer status,Integer id) {
+        return wishBottleRepository.deleteById(status,id);
     }
 }

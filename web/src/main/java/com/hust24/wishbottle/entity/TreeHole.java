@@ -23,7 +23,7 @@ public class TreeHole {
      * 该树洞的发表时间
      */
     @Column @NotNull
-    private Date time;
+    private long time;
 
     /**
      * 树洞的文本内容
@@ -42,6 +42,19 @@ public class TreeHole {
      */
     private String pic;
 
+    /**
+     * 树洞状态0为没删，1为删除
+     * */
+    private Integer status;
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer type) {
+        this.status = type;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -58,11 +71,11 @@ public class TreeHole {
         this.writerId = writerId;
     }
 
-    public Date getTime() {
+    public long getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(long time) {
         this.time = time;
     }
 

@@ -23,7 +23,7 @@ public class WishBottle {
      * 该心愿瓶的发布时间 不能为空
      */
     @Column @NotNull
-    private Date date;
+    private long date;
 
     /**
      * 该心愿的类型 0-文本 1-语音
@@ -42,6 +42,20 @@ public class WishBottle {
      */
     @Column
     private String content;
+
+    /**
+     * 捡瓶子人的id  默认值为1
+     */
+    @Column
+    private Integer status;
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     public String getContent() {
         return content;
@@ -67,11 +81,11 @@ public class WishBottle {
         this.writerId = writerId;
     }
 
-    public Date getDate() {
+    public long getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(long date) {
         this.date = date;
     }
 

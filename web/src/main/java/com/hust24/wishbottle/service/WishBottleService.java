@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface WishBottleService {
     public List<WishBottle> findAllPickedBottle(Integer pickerId);
+    public int deleteById(Integer status,Integer id);
 }
