@@ -9,26 +9,26 @@ public class User {
     /**
      * 用户id 作为主键
      */
-    @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Integer id;
 
     /**
      * 用户昵称 不能为空 有一个默认值
      */
     @Column  @NotNull
-    private String name = "DEFAULT_NAME";
+    private String name;
 
     /**
      * 用户头像
      */
-    @Column
+    @Column @NotNull
     private String avatar;
 
     /**
      * 用户性别 0-男 1-女 不能为空 默认值为0
      */
     @Column @NotNull
-    private int gender = 0;
+    private int gender;
 
     /**
      * 用户年龄 因为有统计年龄的功能模块 所以这个字段不能为空 默认为18
@@ -38,10 +38,10 @@ public class User {
     private int age = 18;
 
     /**
-     * 用户个性签名 默认为空字符
+     * 用户个性签名 默认为空
      */
     @Column
-    private String signature = "";
+    private String signature;
 
 
     public Integer getId() {
