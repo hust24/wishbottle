@@ -1,9 +1,15 @@
 package com.hust24.wishbottle.service;
 
 import com.hust24.wishbottle.entity.Message;
-import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MessageService{
 
+
     Message addMessage(Message message);
+
+  public Message insertMessage(Message message);   //插入消息
+
+  public Message getMessageById(Integer messageId); //获取消息信息
+
+
 }

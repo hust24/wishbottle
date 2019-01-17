@@ -6,8 +6,12 @@ import com.hust24.wishbottle.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+
+
 @Service
 public class MessageServiceImpl implements MessageService {
+
     @Autowired
     MessageRepository messageRepository;
 
@@ -15,4 +19,20 @@ public class MessageServiceImpl implements MessageService {
     public Message addMessage(Message message) {
         return messageRepository.save(message);
     }
+
+
+
+    @Override
+    public Message insertMessage(Message message) {
+        return messageRepository.save(message);
+    }
+
+
+    @Override
+    public Message getMessageById(Integer messageId)
+    {
+        return messageRepository.findById(messageId).get();
+    }
+
+
 }
