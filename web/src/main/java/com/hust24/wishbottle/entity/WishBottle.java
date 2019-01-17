@@ -2,7 +2,6 @@ package com.hust24.wishbottle.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.sql.Date;
 
 @Entity
 public class WishBottle {
@@ -23,19 +22,32 @@ public class WishBottle {
      * 该心愿瓶的发布时间 不能为空
      */
     @Column @NotNull
-    private Date date;
+    private long wishTime;
 
     /**
      * 该心愿的类型 0-文本 1-语音
      */
     @Column @NotNull
-    private int type = 0;
+    private int type;
 
     /**
-     * 捡瓶子人的id  默认值为1
+     * 捡瓶子人的id
      */
     @Column
-    private Integer pickerId = 1;
+    private Integer pickerId;
+
+    /**
+     * 瓶子的状态 0-没被捞 1-被捞取 2捞取者删除 3-发布者删除 4-两者都删 5-管理员删除
+     */
+    @Column @NotNull
+    private Integer status = 0;
+
+    /**
+     * 树洞内容
+     */
+    @Column @NotNull
+    private String content;
+
 
     public Integer getId() {
         return id;
@@ -53,12 +65,12 @@ public class WishBottle {
         this.writerId = writerId;
     }
 
-    public Date getDate() {
-        return date;
+    public long getWishTime() {
+        return wishTime;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setWishTime(long wishTime) {
+        this.wishTime = wishTime;
     }
 
     public int getType() {
@@ -75,5 +87,21 @@ public class WishBottle {
 
     public void setPickerId(Integer pickerId) {
         this.pickerId = pickerId;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }
