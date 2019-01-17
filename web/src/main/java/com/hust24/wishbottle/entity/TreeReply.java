@@ -40,13 +40,21 @@ public class TreeReply {
      */
     @Column
     @NotNull
-    private Date   time ;
+    private long  replyTime ;
 
     /**
      * 回复的内容 默认为空字符 不能为null
      */
     @Column
-    @NotNull
+     private Integer status;
+
+    public void setReplyTime(long replyTime) {
+        this.replyTime = replyTime;
+    }
+
+    public long getReplyTime() {
+        return replyTime;
+    }
 
     private String content="" ;
 
@@ -82,13 +90,7 @@ public class TreeReply {
         this.answeredId = answeredId;
     }
 
-    public Date getTime() {
-        return time;
-    }
 
-    public void setTime(Date time) {
-        this.time = time;
-    }
 
     public String getContent() {
         return content;
