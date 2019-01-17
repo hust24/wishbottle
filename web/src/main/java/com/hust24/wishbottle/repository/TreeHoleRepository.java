@@ -7,11 +7,27 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
+
 public interface TreeHoleRepository extends JpaRepository<TreeHole,Integer> {
     @Query(value = "select * from tree_hole where status=0",nativeQuery = true)
     List<TreeHole> findAllTreeHole();
 
-//    @Modifying
-//    @Query(value = "update tree_hole set scan=?1 where id=?2",nativeQuery = true)
-//    int updateScan(Integer scan,Integer id);
+
+
+
+
+     //SQL
+
+     @Query(value = "select * from tree_hole where writer_id=?1",nativeQuery = true)
+     List<TreeHole> getMyHoleList(Integer user_id) ;
+
+
+
+     @Modifying
+     @Query(value = "update  tree_hole th set th.status=2  where th.id=?1",nativeQuery =  true)
+     int     updateTreeHole(Integer treeHoleId);
+
+
+
+
 }

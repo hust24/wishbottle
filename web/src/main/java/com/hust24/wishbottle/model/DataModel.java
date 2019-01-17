@@ -2,9 +2,11 @@ package com.hust24.wishbottle.model;
 
 public class DataModel {
 
-    private Integer code = 0;
-    private String errorMsg;
-    private Object data = null;
+
+    private Integer code =0 ;
+    private String errorMsg =null;
+    private Object data=null;
+
 
     public Integer getCode() {
         return code;
@@ -14,12 +16,14 @@ public class DataModel {
         this.code = code;
     }
 
-    public String getErrorMsg() {
+
+    public String getErrormsg() {
         return errorMsg;
     }
 
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
+    public void setErrormsg(String errormsg) {
+        this.errorMsg = errormsg;
+
     }
 
     public Object getData() {

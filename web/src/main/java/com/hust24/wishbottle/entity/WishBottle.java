@@ -22,7 +22,7 @@ public class WishBottle {
      * 该心愿瓶的发布时间 不能为空
      */
     @Column @NotNull
-    private long date;
+
 
     private long wishTime;
 
@@ -47,8 +47,17 @@ public class WishBottle {
     /**
      * 树洞内容
      */
-    @Column @NotNull
-    private String content;
+   
+    @Column
+    private String content="";
+
+
+    
+
+    
+
+
+    
 
     public Integer getId() {
         return id;
@@ -81,6 +90,7 @@ public class WishBottle {
         this.wishTime = wishTime;
     }
 
+
     public int getType() {
         return type;
     }
@@ -97,6 +107,7 @@ public class WishBottle {
         this.pickerId = pickerId;
     }
 
+
     public Integer getStatus() {
         return status;
     }
@@ -105,11 +116,13 @@ public class WishBottle {
         this.status = status;
     }
 
+    public void setContent(String content) {
+        this.content = content;
+
+    }
+
     public String getContent() {
         return content;
     }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
 }

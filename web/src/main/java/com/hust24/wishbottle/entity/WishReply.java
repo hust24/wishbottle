@@ -31,7 +31,9 @@ public class WishReply {
      * 回复的发表时间
      */
     @Column @NotNull
-    private long time;
+
+    private long wishReplyTime;
+
 
     /**
      * 回复的内容 默认为空字符 不能为null
@@ -63,13 +65,17 @@ public class WishReply {
         this.replyerId = replyerId;
     }
 
-    public long getTime() {
-        return time;
+
+    public long getWishReplyTime() {
+        return wishReplyTime;
     }
 
-    public void setTime(long time) {
-        this.time = time;
+    public void setWishReplyTime(long wishReplyTime) {
+        this.wishReplyTime = wishReplyTime;
+
     }
+
+
 
     public String getContent() {
         return content;

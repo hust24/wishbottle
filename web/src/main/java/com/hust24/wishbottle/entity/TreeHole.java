@@ -2,7 +2,7 @@ package com.hust24.wishbottle.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.sql.Date;
+
 
 @Entity
 public class TreeHole {
@@ -23,7 +23,11 @@ public class TreeHole {
      * 该树洞的发表时间
      */
     @Column @NotNull
-    private long time;
+
+  
+
+    private long treeTime;
+
 
     /**
      * 树洞的文本内容
@@ -42,17 +46,39 @@ public class TreeHole {
      */
     private String pic;
 
+
     /**
      * 树洞状态0为没删，1为删除
      * */
     private Integer status;
 
+
+    /**
+     * 树洞的类型 , 0树洞未删除，1树洞删除，默认值为0。
+     */
+
+
+
+   
+
+    public long getTreeTime() {
+        return treeTime;
+    }
+
+    public void setTreeTime(long treeTime) {
+        this.treeTime = treeTime;
+    }
+
+
     public Integer getStatus() {
         return status;
     }
 
+
     public void setStatus(Integer type) {
         this.status = type;
+
+   
     }
 
     public Integer getId() {
@@ -71,6 +97,7 @@ public class TreeHole {
         this.writerId = writerId;
     }
 
+
     public long getTime() {
         return time;
     }
@@ -78,6 +105,9 @@ public class TreeHole {
     public void setTime(long time) {
         this.time = time;
     }
+
+
+
 
     public String getContent() {
         return content;
