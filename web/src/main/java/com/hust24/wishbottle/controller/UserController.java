@@ -4,11 +4,7 @@ package com.hust24.wishbottle.controller;
 
 import com.hust24.wishbottle.entity.User;
 import com.hust24.wishbottle.model.DataModel;
-
-
 import com.hust24.wishbottle.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,7 +30,7 @@ public class UserController {
             model.setData(userService.addUser(user));
         }catch (Exception e){
             model.setCode(1);
-            model.setErrorMsg("调用接口失败");
+            model.setErrormsg("调用接口失败");
         }
         return model;
     }
@@ -51,7 +47,7 @@ public class UserController {
             model.setData(userService.alterUser(user));
         }catch (Exception e){
             model.setCode(1);
-            model.setErrorMsg("调用接口失败");
+            model.setErrormsg("调用接口失败");
         }
         return model;
     }
