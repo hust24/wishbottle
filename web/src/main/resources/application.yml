@@ -1,5 +1,17 @@
 spring:
   datasource:
+<<<<<<< HEAD
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/wishbottle?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT
+      username: root
+      password: 123456
+
+  jpa:
+      database: mysql
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+=======
     username: root
     password: 123456
     url: jdbc:mysql://127.0.0.1:3306/wishbottle?serverTimezone=UTC
@@ -11,3 +23,4 @@ spring:
     show-sql: true
   artemis:
     port: 8080
+>>>>>>> master

@@ -22,6 +22,8 @@ public class WishBottle {
      * 该心愿瓶的发布时间 不能为空
      */
     @Column @NotNull
+    private long date;
+
     private long wishTime;
 
     /**
@@ -48,7 +50,6 @@ public class WishBottle {
     @Column @NotNull
     private String content;
 
-
     public Integer getId() {
         return id;
     }
@@ -65,6 +66,13 @@ public class WishBottle {
         this.writerId = writerId;
     }
 
+    public long getDate() {
+        return date;
+    }
+
+    public void setDate(long date) {
+        this.date = date;
+    }
     public long getWishTime() {
         return wishTime;
     }
