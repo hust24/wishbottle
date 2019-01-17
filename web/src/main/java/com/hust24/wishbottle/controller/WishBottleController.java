@@ -1,17 +1,9 @@
 package com.hust24.wishbottle.controller;
 
 import com.hust24.wishbottle.entity.WishBottle;
-
 import com.hust24.wishbottle.model.DataModel;
 import com.hust24.wishbottle.service.WishBottleService;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.bind.annotation.*;
-
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-
 
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
@@ -53,7 +45,7 @@ public class WishBottleController {
             model.setData(wishBottleService.addWish(wishBottle));
         }catch(Exception e){
             model.setCode(1);
-            model.setErrorMsg("接口调用失败");
+            model.setErrormsg("接口调用失败");
         }
         return model;
     }
@@ -77,7 +69,7 @@ public class WishBottleController {
             model.setData(wish);
         }catch (Exception e){
             model.setCode(1);
-            model.setErrorMsg("接口调用失败");
+            model.setErrormsg("接口调用失败");
         }
         return model;
     }

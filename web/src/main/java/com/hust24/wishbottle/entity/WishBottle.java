@@ -75,13 +75,7 @@ public class WishBottle {
         this.writerId = writerId;
     }
 
-    public long getDate() {
-        return date;
-    }
 
-    public void setDate(long date) {
-        this.date = date;
-    }
     public long getWishTime() {
         return wishTime;
     }
