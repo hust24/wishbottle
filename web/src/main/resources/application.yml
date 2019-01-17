@@ -1,13 +1,14 @@
 spring:
   datasource:
-    username: root
-    password: 123456
-    url: jdbc:mysql://127.0.0.1:3306/wishbottle?serverTimezone=UTC
+
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/wishbottle?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT
+      username: root
+      password: a597924201
+
   jpa:
-    hibernate:
-      # 更新或者创建数据表结构
-      ddl-auto: update
-    # 增删改查显示sql
-    show-sql: true
-  artemis:
-    port: 8080
+      database: mysql
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+
