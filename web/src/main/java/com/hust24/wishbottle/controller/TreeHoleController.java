@@ -27,38 +27,61 @@ public class TreeHoleController {
 
     TreeHoleService treeHoleService;   //需要导入相关service包
 
-
+    /**
+     * 获取所有树洞列表
+     * @return
+     */
     @GetMapping("/alltreehole")
-    private List<TreeHole> findAllTreeHole()
-    {
-        return treeHoleService.findAllTreeHole();
-    }
-
-    @PutMapping("/updatescan")
-    private TreeHole updateScan(Integer treeholeid)
-    {
-        return treeHoleService.updateScan(treeholeid);
-    }
-
-    @RequestMapping("/treeholelist")
-    public DataModel getMyHoleList(Integer user_id)
-    {
-
-        DataModel model =new DataModel();
-
+    private DataModel findAllTreeHole(){
+        DataModel model = new DataModel();
         try{
-            model.setData(treeHoleService.getMyHoleList(user_id));
-        }
-        catch (Exception e)
-        {
+            model.setData(treeHoleService.findAllTreeHole());
+        }catch (Exception e){
             model.setCode(1);
-            model.setErrormsg("调用接口失败");
+            model.setErrormsg("接口调用失败");
         }
-
         return model;
     }
 
+    /**
+     * 更新浏览量
+     * @param treeholeid
+     * @return
+     */
+    @PutMapping("/updatescan")
+    private DataModel updateScan(Integer treeholeid){
+        DataModel model = new DataModel();
+        try{
+            model.setData(treeHoleService.updateScan(treeholeid));
+        }catch (Exception e){
+            model.setCode(1);
+            model.setErrormsg("接口调用失败");
+        }
+        return model;
+    }
 
+    /**
+     * 查看我的树洞列表
+     * @param user_id
+     * @return
+     */
+    @RequestMapping("/getmytreehole")
+    public DataModel getMyHoleList(Integer user_id){
+        DataModel model =new DataModel();
+        try{
+            model.setData(treeHoleService.getMyHoleList(user_id));
+        }catch (Exception e){
+            model.setCode(1);
+            model.setErrormsg("调用接口失败");
+        }
+        return model;
+    }
+
+    /**
+     * 新增树洞
+     * @param treeHole
+     * @return
+     */
     @RequestMapping("/addtreehole")
     public DataModel addTreeHole(TreeHole treeHole) {   // 添加树洞
 
@@ -76,21 +99,20 @@ public class TreeHoleController {
 
     }
 
-
+    /**
+     * 实际上是删除树洞
+     * @param treeHoleId
+     * @return
+     */
     @RequestMapping("/updateTreeHole")    //更新树洞的状态   1  已经被删除  0 没有被删除
-    public DataModel updateTreeHole(Integer treeHoleId)
-    {
+    public DataModel updateTreeHole(Integer treeHoleId){
         DataModel model =new DataModel();
         try{
           treeHoleService.updateTreeHole(treeHoleId);
-        }
-
-        catch (Exception e)
-        {
+        }catch (Exception e){
            model.setCode(1);
            model.setErrormsg("调用接口失败");
         }
-
         return model;
     }
 

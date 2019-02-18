@@ -31,15 +31,36 @@ public class WishReply {
      * 回复的发表时间
      */
     @Column @NotNull
-
     private long wishReplyTime;
-
 
     /**
      * 回复的内容 默认为空字符 不能为null
      */
     @Column @NotNull
     private String content = "";
+
+    /**
+     * 回复的消息类型 0文本 1语音
+     */
+    @Column @NotNull
+    private int type;
+
+    /**
+     * 构造方法
+     * @param wishbottleid 心愿瓶id
+     * @param content 回复内容
+     * @param type 回复类型
+     * @param replyerid 回复者id
+     * @param time 回复时间
+     */
+    public WishReply(Integer wishbottleid, String content, int type, Integer replyerid, long time){
+        this.wishBottleId = wishbottleid;
+        this.content = content;
+        this.type = type;
+        this.replyerId = replyerid;
+        this.wishReplyTime = time;
+    }
+
 
     public Integer getId() {
         return id;
@@ -65,17 +86,13 @@ public class WishReply {
         this.replyerId = replyerId;
     }
 
-
     public long getWishReplyTime() {
         return wishReplyTime;
     }
 
     public void setWishReplyTime(long wishReplyTime) {
         this.wishReplyTime = wishReplyTime;
-
     }
-
-
 
     public String getContent() {
         return content;
@@ -83,5 +100,13 @@ public class WishReply {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }

@@ -23,7 +23,7 @@ public class UserController {
      * @param user 其中id name avatar gender 不能为空
      * @return model
      */
-    @PostMapping("/add")
+    @PostMapping("/adduser")
     private DataModel addUser(User user){
         DataModel model = new DataModel();
         try{
@@ -40,7 +40,7 @@ public class UserController {
      * @param user 其中id name avatar gender 不能为空
      * @return model
      */
-    @PostMapping("/alert")
+    @PostMapping("/alertuser")
     private DataModel alterUser(User user){
         DataModel model = new DataModel();
         try{

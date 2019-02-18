@@ -10,4 +10,5 @@ import java.util.List;
 public interface WishReplyRepository extends JpaRepository<WishReply, Integer> {
     @Query(value = "select * from wish_reply where wish_bottle_id=?1",nativeQuery = true)
     List<WishReply> findAllWishReply(Integer wishbottleid);
+
 }
