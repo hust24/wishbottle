@@ -1,2 +1,5 @@
 <!--pages/LoginPage/LoginPage.wxml-->
-<text>pages/LoginPage/LoginPage.wxml</text>
+<view class='wrap'>
+  <image id='bg_image' src='../../images/login_bg.jpg'></image>
+  <button lang='zh_CN' open-type='getUserInfo' bindgetuserinfo='checkPermission' id='bn_login'>使用微信登录</button>
+</view>

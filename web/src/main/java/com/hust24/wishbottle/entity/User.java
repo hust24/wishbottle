@@ -10,7 +10,7 @@ public class User {
      * 用户id 作为主键
      */
     @Id
-    private Integer id;
+    private String id;
 
     /**
      * 用户昵称 不能为空 有一个默认值
@@ -44,11 +44,11 @@ public class User {
     private String signature;
 
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
