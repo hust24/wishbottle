@@ -21,7 +21,7 @@ public class MessageController {
     @Resource
     @Autowired
 
-    MessageService messageService;   //需要导入相关service包
+   private MessageService messageService;   //需要导入相关service包
 
     /**
      * 插入消息
@@ -39,22 +39,49 @@ public class MessageController {
         }
         return  model;
     }
+    @GetMapping("/getmessagebyid")
+    public DataModel getMessageById(Integer messageId)
+    { DataModel model =new DataModel();
 
-    /**
-     * 阅读消息
-     * @param messageId
-     * @return
-     */
-    @GetMapping("/readmessage")
-    public DataModel getMessageById(Integer messageId){
-        DataModel model =new DataModel();
         try{
             model.setData(messageService.getMessageById(messageId));
-        }catch (Exception e){
-            model.setCode(1);
+        }
+        catch (Exception e)
+        {
+            model.setCode(1);//
+
             model.setErrormsg("调用接口失败");
         }
         return  model;
 
     }
+    @GetMapping("getmymessagebytype")
+    public DataModel getMymessageByType(Integer userId,Integer type)
+    { DataModel model =new DataModel();
+
+        try{
+            model.setData(messageService.getMyMessageByType(userId,type));
+        }
+        catch (Exception e)
+        {
+            model.setCode(1);
+            model.setErrormsg("调用接口失败");
+        }
+        return  model;
+    }
+    @GetMapping("/nonreadmessagenumber")
+    public DataModel nonReadMessageNumber(Integer userId,Integer type)
+    { DataModel model =new DataModel();
+
+        try{
+            model.setData(messageService.nonReadMessageNumber(userId,type));
+        }
+        catch (Exception e)
+        {
+            model.setCode(1);
+            model.setErrormsg("调用接口失败");
+        }
+        return  model;
+    }
+
 }
