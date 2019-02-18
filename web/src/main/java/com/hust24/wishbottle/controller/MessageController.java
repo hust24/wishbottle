@@ -23,37 +23,37 @@ public class MessageController {
 
     MessageService messageService;   //需要导入相关service包
 
-
+    /**
+     * 插入消息
+     * @param message
+     * @return
+     */
     @PutMapping("/insertmessage")
-
     public DataModel insertMessage(Message message){        //插入一条消息
-          DataModel model =new DataModel();
-
+        DataModel model =new DataModel();
         try{
             model.setData(messageService.insertMessage(message));
-        }
-        catch (Exception e)
-        {
+        }catch (Exception e){
             model.setCode(1);
             model.setErrormsg("调用接口失败");
         }
-
         return  model;
     }
 
-    @GetMapping("/getmessage")
-    public DataModel getMessageById(Integer messageId)
-    { DataModel model =new DataModel();
-
+    /**
+     * 阅读消息
+     * @param messageId
+     * @return
+     */
+    @GetMapping("/readmessage")
+    public DataModel getMessageById(Integer messageId){
+        DataModel model =new DataModel();
         try{
             model.setData(messageService.getMessageById(messageId));
-        }
-        catch (Exception e)
-        {
+        }catch (Exception e){
             model.setCode(1);
             model.setErrormsg("调用接口失败");
         }
-
         return  model;
 
     }

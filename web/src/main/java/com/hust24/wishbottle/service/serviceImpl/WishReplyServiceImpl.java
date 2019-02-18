@@ -10,10 +10,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 
-
-
-
-
 @Service
 public class WishReplyServiceImpl implements WishReplyService {
 
@@ -23,5 +19,10 @@ public class WishReplyServiceImpl implements WishReplyService {
     @Override
     public List<WishReply> findAllWishReply(Integer wishbottleid) {
         return wishReplyRepository.findAllWishReply(wishbottleid);
+    }
+
+    @Override
+    public WishReply addWishReply(WishReply wishReply) {
+        return wishReplyRepository.save(wishReply);
     }
 }
