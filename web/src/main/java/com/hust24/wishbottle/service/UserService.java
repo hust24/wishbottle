@@ -9,4 +9,6 @@ public interface UserService {
 
     // 修改用户信息
     User alterUser(User user);
+
+    User findUserById(String id);
 }

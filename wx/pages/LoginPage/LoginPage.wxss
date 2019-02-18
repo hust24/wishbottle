@@ -1,1 +1,29 @@
-/* pages/LoginPage/LoginPage.wxss */
+page{
+  height: 100%;
+  width: 100%;
+}
+
+.wrap{
+  height: 100%;
+  width: 100%;
+  position: ;
+}
+
+#bg_image{
+  height: 100%;
+  width: 100%;
+}
+
+#bn_login{
+  line-height: 100rpx;
+  width: 300rpx;
+  height: 100rpx;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 45%;
+  left: 36%;
+  margin-top: -10rpx;
+  margin-left: -10rpx;
+  background-color: rgba(0,0,0,.5)
+}
