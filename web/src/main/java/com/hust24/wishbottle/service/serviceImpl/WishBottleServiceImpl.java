@@ -37,6 +37,13 @@ public class WishBottleServiceImpl implements WishBottleService {
     public int deleteById(Integer status,Integer id) {
         return wishBottleRepository.deleteById(status, id);
     }
+
+    //查找自己所有的心愿瓶
+    @Override
+    public List<WishBottle> findMyBottles(Integer writerId) {
+        return wishBottleRepository.findMyBottoles(writerId);
+    }
+
     // 添加心愿
     @Override
     public WishBottle addWish(WishBottle wishBottle) {

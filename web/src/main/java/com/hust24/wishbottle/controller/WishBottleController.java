@@ -6,6 +6,7 @@ import com.hust24.wishbottle.service.WishBottleService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.jws.WebParam;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -17,28 +18,53 @@ public class WishBottleController {
     @Resource
     WishBottleService wishBottleService;   //需要导入相关的service包
 
-
+    /**
+     * 获取捞到的所有心愿
+     * @param pickerId
+     * @return
+     */
     @GetMapping("/getpickwish")
-    public List<WishBottle> findAllPickedBottle(Integer pickerId) {
-        return wishBottleService.findAllPickedBottle(pickerId);
+    public DataModel findAllPickedBottle(Integer pickerId) {
+        DataModel model = new DataModel();
+        try{
+            model.setData(wishBottleService.findAllPickedBottle(pickerId));
+        }catch (Exception e){
+            model.setCode(1);
+            model.setErrormsg("接口调用失败");
+        }
+        return model;
     }
 
-    @PutMapping("/del")
+    /**
+     * 删除心愿
+     * @param id
+     * @param writerid
+     * @param status
+     * @param userid
+     */
+    @PutMapping("/delwish")
     @Transactional
-    public void deleteById(Integer id,Integer writerid,Integer status,Integer userid) {
+    public DataModel deleteById(Integer id,Integer writerid,Integer status,Integer userid) {
+        DataModel model = new DataModel();
         if (status == 0) {
             if (userid == writerid)
                 status = 1;
             else status = 2;
         } else status = 3;
-        wishBottleService.deleteById(status, id);
+        try{
+            wishBottleService.deleteById(status, id);
+        }catch (Exception e){
+            model.setCode(1);
+            model.setErrormsg("接口调用失败");
+        }
+        return model;
     }
     /**
      * 添加心愿接口
      * @param wishBottle 其中
      * @return model
      */
-    @PostMapping("/add")
+    @PostMapping("/addwish")
     private DataModel addWish(WishBottle wishBottle){
         DataModel model = new DataModel();
         try{
@@ -55,7 +81,7 @@ public class WishBottleController {
      * @param pickerId 捞心愿人的id
      * @return model
      */
-    @PostMapping("/pick")
+    @PostMapping("/pickbottle")
     private DataModel pickWish(Integer pickerId){
         DataModel model = new DataModel();
         try{
@@ -67,6 +93,23 @@ public class WishBottleController {
                 wishBottleService.saveWish(wish);
             }
             model.setData(wish);
+        }catch (Exception e){
+            model.setCode(1);
+            model.setErrormsg("接口调用失败");
+        }
+        return model;
+    }
+
+    /**
+     * 查找该用户写的所有心愿
+     * @param writerId 作者id
+     * @return
+     */
+    @GetMapping("/getallwish")
+    private DataModel getAllWish(Integer writerId){
+        DataModel model = new DataModel();
+        try{
+            model.setData(wishBottleService.findMyBottles(writerId));
         }catch (Exception e){
             model.setCode(1);
             model.setErrormsg("接口调用失败");
